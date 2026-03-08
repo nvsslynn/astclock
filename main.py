@@ -2,6 +2,7 @@ from flask import Flask, url_for, render_template, jsonify
 from datetime import datetime as dt
 
 app = Flask(__name__)
+_host = "0.0.0.0"
 
 @app.route("/")
 def index():
@@ -16,4 +17,5 @@ def rawpage():
         "secs": now.strftime("%S")
     })
 
-app.run(debug=True)
+
+app.run(host=_host, port=5000)
